@@ -1,0 +1,18 @@
+class Solution {
+    public int[] plusOne(int[] digits) {
+        int num = 0;
+        int i;
+        for(i = 0; i < digits.length; i++){
+            num = num + (digits[i]*10^(digits.length - 1-i));
+            System.out.println(num);
+        }
+        num += 1;
+        String temp = String.valueOf(num);
+                
+        int arrValue[] = new int[temp.length()];
+        for(i =0; i < arrValue.length; i++){
+            arrValue[i] = Integer.valueOf(temp.substring(i, i+1));
+        }
+        return arrValue;
+    }
+}
