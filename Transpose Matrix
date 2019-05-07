@@ -1,0 +1,16 @@
+
+class Solution {
+    public int[][] transpose(int[][] A) {
+        
+        int i = A.length;
+        int j = A[0].length;
+        
+        int[][] B = new int[j][i];
+        for(int x=0; x<j; x++){
+            for(int y=0; y<i; y++){
+                B[x][y] = A[y][x];
+            }
+        }
+        return B;
+    }
+}
