@@ -1,0 +1,32 @@
+class Solution {
+    public boolean detectCapitalUse(String word) {
+        String capital="";
+        boolean check = true;
+       
+        if(word.length() > 1){
+        if(Integer.valueOf(word.charAt(0)) > 64 && Integer.valueOf(word.charAt(0)) < 91 && Integer.valueOf(word.charAt(1)) > 64 && Integer.valueOf(word.charAt(1)) < 91){
+            capital = "upper";
+        }
+        else if(Integer.valueOf(word.charAt(0)) > 64 && Integer.valueOf(word.charAt(0)) < 91 && Integer.valueOf(word.charAt(1)) > 96 && Integer.valueOf(word.charAt(1)) < 123){
+            capital = "lower";
+        }
+        else if(Integer.valueOf(word.charAt(0)) > 96 && Integer.valueOf(word.charAt(0)) < 123 && Integer.valueOf(word.charAt(1)) > 96 && Integer.valueOf(word.charAt(1)) < 123){
+            capital = "lower";
+        }
+        else if( Integer.valueOf(word.charAt(0)) > 96 && Integer.valueOf(word.charAt(0)) < 123 && Integer.valueOf(word.charAt(1)) > 64 && Integer.valueOf(word.charAt(1)) < 91){
+            check = false;
+        }
+        }
+        
+        for(int i = 2; i < word.length(); i++){
+            System.out.println(i);
+            if(capital == "upper" && Integer.valueOf(word.charAt(i)) > 91){
+                check = false;
+            }
+            if(capital == "lower" && Integer.valueOf(word.charAt(i)) < 91){
+                check = false;
+            }
+        }
+        return check;
+    }
+}
