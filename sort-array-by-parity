@@ -1,0 +1,22 @@
+class Solution {
+public:
+    vector<int> sortArrayByParity(vector<int>& A) {
+        vector<int>ordered(A.size());
+        int count = 0;
+        
+        for(int i = 0; i < A.size(); i++){
+            if(A[i]%2 == 0){
+            ordered[count] = A[i];
+            count++;
+            }
+        }
+        
+        for(int i = 0; i < A.size(); i++){
+            if(A[i]%2 > 0){
+            ordered[count] = A[i];
+            count++;
+            }
+        }
+     return ordered;   
+    }
+};
